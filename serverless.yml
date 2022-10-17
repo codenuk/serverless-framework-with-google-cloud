@@ -13,6 +13,9 @@ provider:
   credentials: ./keyfile.json
 
 frameworkVersion: '3'
+custom:
+  serverless-offline:
+    lambdaPort: 4000
 
 plugins:
   - serverless-google-cloudfunctions
@@ -27,10 +30,14 @@ package:
     - .git/**
 
 functions:
-  first:
-    handler: http
+  hello:
+    handler: hello
     events:
-      - http: path
+      - http: hello
+  helloNuk:
+    handler: helloNuk
+    events:
+      - http: helloNuk
   # NOTE: the following uses an "event" event (pubSub event in this case).
   # Please create the corresponding resources in the Google Cloud
   # before deploying this service through Serverless
