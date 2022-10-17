@@ -1,14 +1,19 @@
 {
-  "name": "test-google",
+  "name": "test-first-deploy",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "sls offline start --host 0.0.0.0 --httpPort 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "serverless.com",
   "license": "MIT",
   "devDependencies": {
+    "serverless-offline": "^7.0.0",
     "serverless-google-cloudfunctions": "^4.6.0"
+  },
+  "dependencies": {
+    "serverless-mysql": "^1.5.4"
   }
 }
